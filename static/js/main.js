@@ -63,6 +63,49 @@ document.querySelector('.logo').addEventListener('click', () => {
 
 
 
+// HIDE SECTION 2,4 AND 5 ON SMALLER SCREENS WHEN LAPTOP USERS CLICK INSPECT
+
+
+function handleResponsiveSections() {
+  const width = window.innerWidth;
+
+  if (width <= 768) {
+    // Remove sections 2, 4, and 5 completely from DOM
+    document.querySelectorAll('.content-block[data-id="2"], .content-block[data-id="4"], .content-block[data-id="5"]').forEach(el => el.remove());
+
+    // Also remove their nav links and icons
+    document.querySelectorAll('a[data-location="2"], a[data-location="4"], a[data-location="5"], .icon[data-location="2"], .icon[data-location="4"], .icon[data-location="5"]').forEach(el => el.remove());
+
+    // Force reload to Section 1 if currently not on it
+    const active = document.querySelector('.content-block.active');
+    if (!active || !active.matches('[data-id="1"]')) {
+      activateSection(1);
+    }
+  }
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', handleResponsiveSections);
+
+// Run again if window is resized
+window.addEventListener('resize', () => {
+  // Optional: reload the page when resizing across the breakpoint for a clean reset
+  if (window.innerWidth <= 768) {
+    location.reload();
+  }
+});
+
+
+// HIDE SECTION 2,4 AND 5 ON SMALLER SCREENS WHEN LAPTOP USERS CLICK INSPECT
+
+
+
+
+
+
+
+
+
 // --- DRAGGABLE SNAP-BACK FOR HOW-STEP TILES ---
 document.querySelectorAll('.how-step').forEach(tile => {
   let startX = 0, startY = 0, offsetX = 0, offsetY = 0, dragging = false;
@@ -199,8 +242,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Rotate testimonials every 4 seconds
+  if (testimonialText) {
   showTestimonial();
   setInterval(showTestimonial, 4000);
+}
 
   // Observe Section 4 to show/hide testimonials
   const section4 = document.querySelector('.content-block[data-id="4"]');
@@ -227,7 +272,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
 
 
 
