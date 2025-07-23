@@ -172,7 +172,12 @@ document.addEventListener("DOMContentLoaded", function () {
     "Victoria Island has high-rise luxury apartments near top restaurants.",
     "Ikeja GRA offers quieter neighborhoods with proximity to the airport.",
     "Surulere has plenty of markets, schools, and central road networks.",
-    "Ikorodu offers lower rents with improving road connectivity."
+    "Ikorodu offers lower rents with improving road connectivity.",
+    "Transparent Estimates: See what’s typical before you negotiate.",
+    "Explore Freely: Adjust your inputs to see how location or features impact rent.",
+    "Budget Confidence: Avoid surprises and filter out homes beyond your reach.",
+    "Data-Driven, Not Hearsay: Our predictions are based on real listings, not word of mouth.",
+    "Made for Lagos: Focused specifically on the unique rental market of Lagos."
   ];
 
   let testimonialIndex = 0;
