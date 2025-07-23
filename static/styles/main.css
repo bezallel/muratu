@@ -21,6 +21,36 @@ body {
     max-height: 100vh;
 }
 
+
+header .logo h2 {
+  font-size: 1.2rem;
+  padding: .6rem;
+  cursor: pointer;
+
+  /* Constant floating animation */
+  animation: hoverFloat 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Slight bump when hovered */
+header .logo h2:hover {
+  transform: scale(1.1);
+}
+
+/* Floating effect */
+@keyframes hoverFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
 header{
     padding: 0px 40px;
     display: flex;
